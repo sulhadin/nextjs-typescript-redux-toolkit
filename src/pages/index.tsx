@@ -1,28 +1,24 @@
-import React from "react";
+import React from 'react';
 
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import {useDispatch, useSelector} from "react-redux";
-import {getUser, setUser} from "../store/slices/userSlice";
-import {Typography} from "@mui/material";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser, setUser } from '../store/slices/userSlice';
+import { Typography } from '@mui/material';
 
 const Home: NextPage = () => {
-
   const dispatch = useDispatch();
   const user = useSelector(getUser);
 
   React.useEffect(() => {
     setTimeout(() => {
-      dispatch(
-          setUser({id:2, username: "Öney"})
-      );
+      dispatch(setUser({ id: 2, username: 'Öney' }));
     }, 2000);
   });
 
-
-  console.log("user", user)
+  console.log('user', user);
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +29,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Typography variant="h1" component="h2"  className={styles.title}>
+        <Typography variant="h1" component="h2" className={styles.title}>
           Hi <>{user.username}</>
         </Typography>
 
@@ -61,10 +57,7 @@ const Home: NextPage = () => {
             </Typography>
           </a>
 
-          <a
-            href="#"
-            className={styles.card}
-          >
+          <a href="#" className={styles.card}>
             <Typography variant="h2" component="h2">
               Box 3 &rarr;
             </Typography>
@@ -73,10 +66,7 @@ const Home: NextPage = () => {
             </Typography>
           </a>
 
-          <a
-            href="#"
-            className={styles.card}
-          >
+          <a href="#" className={styles.card}>
             <Typography variant="h2" component="h2">
               Box 4 &rarr;
             </Typography>
@@ -100,7 +90,7 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
