@@ -1,12 +1,15 @@
 import React from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUser, setUser } from '../store/slices/userSlice';
+
 import { Typography } from '@mui/material';
+
+import { getUser, setUser } from '../store/slices/userSlice';
+import Card from '../ui/components/Card';
+
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
@@ -38,42 +41,22 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="#" className={styles.card}>
-            <Typography variant="h2" component="h2">
-              Box 1 &rarr;
-            </Typography>
-            <p></p>
-            <Typography variant="subtitle2">
-              Find in-depth information about Next.js features and API.
-            </Typography>
-          </a>
-
-          <a href="#" className={styles.card}>
-            <Typography variant="h2" component="h2">
-              Box 2 &rarr;
-            </Typography>
-            <Typography variant="subtitle2">
-              Learn about Next.js in an interactive course with quizzes!
-            </Typography>
-          </a>
-
-          <a href="#" className={styles.card}>
-            <Typography variant="h2" component="h2">
-              Box 3 &rarr;
-            </Typography>
-            <Typography variant="subtitle2">
-              Discover and deploy boilerplate example Next.js projects.
-            </Typography>
-          </a>
-
-          <a href="#" className={styles.card}>
-            <Typography variant="h2" component="h2">
-              Box 4 &rarr;
-            </Typography>
-            <Typography variant="subtitle2">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </Typography>
-          </a>
+          <Card
+            title={'Box 1'}
+            text={'Find in-depth information about Next.js features and API.'}
+          />
+          <Card
+            title={'Box 2'}
+            text={'Find in-depth information about Next.js features and API.'}
+          />
+          <Card
+            title={'Box 3'}
+            text={'Find in-depth information about Next.js features and API.'}
+          />
+          <Card
+            title={'Box 4'}
+            text={'Find in-depth information about Next.js features and API.'}
+          />
         </div>
       </main>
 
