@@ -1,6 +1,8 @@
-import styles from '../../styles/Home.module.css';
-import { Typography } from '@mui/material';
 import React, { memo } from 'react';
+import { Typography } from '@mui/material';
+
+import styles from '../../styles/Home.module.css';
+
 interface ICard {
   title: string;
   text: string;
