@@ -8,6 +8,12 @@ import Card from '../ui/components/Card';
 import { useDispatch, useSelector } from '../store/store';
 import styles from '../styles/Home.module.css';
 
+/**
+ * A simple home page that pulls user info from redux-toolkit and displays.
+ * Additionally it displays some cards for no reason.
+ *
+ * @constructor
+ */
 const Home: NextPage = () => {
   const dispatch = useDispatch();
   const { name, email } = useSelector(getUserState);
