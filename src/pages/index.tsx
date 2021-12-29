@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     }, 2000);
   });
 
-  console.log('username', name, email);
+  console.log('user info', name, email);
 
   return (
     <div className={styles.container}>
