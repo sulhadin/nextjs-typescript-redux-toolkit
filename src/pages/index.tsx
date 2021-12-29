@@ -1,27 +1,26 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-
 import { Typography } from '@mui/material';
-
-import { getUser, setUser } from '../store/slices/userSlice';
+import { getUserState, setName, setEmail } from '../store/slices/userSlice';
 import Card from '../ui/components/Card';
-
+import { useDispatch, useSelector } from '../store/store';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();
-  const user = useSelector(getUser);
+  const { name, email } = useSelector(getUserState);
 
   React.useEffect(() => {
     setTimeout(() => {
-      dispatch(setUser({ id: 2, username: 'Öney' }));
+      dispatch(setName('Öney'));
+      dispatch(setEmail('sulhadin@hotmail.com'));
     }, 2000);
   });
 
-  console.log('user', user);
+  console.log('username', name, email);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +32,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Typography variant="h1" component="h2" className={styles.title}>
-          Hi <>{user.username}</>
+          Hi <>{name}</>
         </Typography>
 
         <p className={styles.description}>
