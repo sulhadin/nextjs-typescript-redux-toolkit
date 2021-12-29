@@ -2,31 +2,16 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Typography } from '@mui/material';
-import { getUserState, setName, setEmail } from '../store/slices/userSlice';
 import Card from '../ui/components/Card';
-import { useDispatch, useSelector } from '../store/store';
 import styles from '../styles/Home.module.css';
+import UserCard from '../ui/home/UserCard';
 
 /**
- * A simple home page that pulls user info from redux-toolkit and displays.
- * Additionally it displays some cards for no reason.
+ * A simple home page that displays User Card and some other cards for no reason.
  *
  * @constructor
  */
 const Home: NextPage = () => {
-  const dispatch = useDispatch();
-  const { name, email } = useSelector(getUserState);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      dispatch(setName('Öney'));
-      dispatch(setEmail('sulhadin@hotmail.com'));
-    }, 2000);
-  });
-
-  console.log('user info', name, email);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -37,9 +22,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Typography variant="h1" component="h2" className={styles.title}>
-          Hi <>{name}</>
-        </Typography>
+        <UserCard />
 
         <p className={styles.description}>
           <code className={styles.code}>Something is wrong I can feel it!</code>
