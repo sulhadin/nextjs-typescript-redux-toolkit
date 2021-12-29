@@ -24,10 +24,6 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <UserCard />
 
-        <p className={styles.description}>
-          <code className={styles.code}>Something is wrong I can feel it!</code>
-        </p>
-
         <div className={styles.grid}>
           <Card
             title={'Box 1'}
