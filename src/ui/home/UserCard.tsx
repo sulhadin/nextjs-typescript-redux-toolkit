@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from '../../store/store';
 import { getUserState, setEmail, setName } from '../../store/slices/userSlice';
 
 /**
- * A simple User card that pulls user info from redux-toolkit and displays.
+ * A simple User card that pulls user info from redux-toolkit and displays it.
  * @constructor
  */
 function UserCard() {
